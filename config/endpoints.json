@@ -1,0 +1,40 @@
+{
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoints": [
+    {
+      "name": "findPetsAvailable",
+      "method": "GET",
+      "path": "/pet/findByStatus?status=available",
+      "expectedStatus": 200
+    },
+    {
+      "name": "getInventory",
+      "method": "GET",
+      "path": "/store/inventory",
+      "expectedStatus": 200
+    },
+    {
+      "name": "getPetById",
+      "method": "GET",
+      "path": "/pet/1",
+      "expectedStatus": 200
+    },
+    {
+      "name": "createPet",
+      "method": "POST",
+      "path": "/pet",
+      "expectedStatus": 200,
+      "body": {
+        "id": "{{randInt}}",
+        "name": "k6-pet-{{randStr}}",
+        "photoUrls": [
+          "https://example.com/pet.jpg"
+        ],
+        "status": "available"
+      }
+    }
+  ]
+}

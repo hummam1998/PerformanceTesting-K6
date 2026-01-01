@@ -1,0 +1,10 @@
+{
+  "name": "k6-petstore-simple",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "load": "docker run --rm -i -e BASE_URL -v \"$PWD:/work\" -w /work grafana/k6 run scenarios/load.js",
+    "stress": "docker run --rm -i -e BASE_URL -v \"$PWD:/work\" -w /work grafana/k6 run scenarios/stress.js",
+    "spike": "docker run --rm -i -e BASE_URL -v \"$PWD:/work\" -w /work grafana/k6 run scenarios/spike.js"
+  }
+}
