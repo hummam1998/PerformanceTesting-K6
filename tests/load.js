@@ -1,5 +1,5 @@
 import { runEndpoints, errorRate } from "../lib/request.js";
-import cfg from "../config/endpoints.json";
+const cfg = JSON.parse(open("../config/endpoints.json"));
 
 export const options = {
   stages: [
